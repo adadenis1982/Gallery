@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { Input, Pagination, Select, Range } from 'fwt-internship-uikit';
 import classnames from 'classnames';
+import { v4 as uuidv4 } from 'uuid';
 import Header from '../Header/Header';
 import Card from '../Card/Card';
 
@@ -59,14 +60,14 @@ function App() {
 
   return (
     <div className={wrapperClass}>
-      <div className="Container">
+      <div className="сontainer">
         <Header
           onClick={handleSwitchTheme}
           isDarkTheme={isDarkTheme}
         />
-        <div className="Content">
+        <div className="сontent">
           <Input
-            className="Input"
+            className="input"
             isDarkTheme={isDarkTheme}
             placeholder="Name"
             value={query}
@@ -74,20 +75,21 @@ function App() {
             type="search"
           />
           <Select
-            className="Select_author"
+            className="select"
             isDarkTheme={isDarkTheme}
             value={author}
             options={authors}
             onChange={handleSearchAuthor}
           />
           <Select
-            className="Select_location"
+            className="select"
             isDarkTheme={isDarkTheme}
             value={location}
             options={locations}
             onChange={handleSearchLocation}
           />
           <Range
+            className='range'
             isDarkTheme={isDarkTheme}
             aria-hidden="true"
           >
@@ -108,16 +110,18 @@ function App() {
           </Range>
         </div>
         {isLoading ? (
-          <p className="Loading">Loading...</p>
+          <p className="loading">Loading...</p>
         ) : (
           <div className="card__wrapper">
-            {paintigs.map((item, index) => (
-              <Card key={index} card={item} />
+            {paintigs.map(paintig => (
+            <Card key={uuidv4()} card={paintig} 
+            location={locations.find((item) => item.id === paintig.locationId)} 
+            author={authors.find((item) => item.id === paintig.authorId)}/>
             ))}
           </div>
         )}
         <Pagination
-          className="Pagination"
+          className="pagination"
           isDarkTheme={isDarkTheme}
           currentPage={page}
           pagesAmount={3}

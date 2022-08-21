@@ -1,30 +1,67 @@
 .card {
-    height: 275px;
-    width: calc (33.333% - 20px);
-    position: relative;
-    overflow: hidden;
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
-
-.card:nth-child(3n + 2) {
-    margin-right: 20px;
-    margin-left: 20px;
+  height: 275px;
+  width: calc (33.333% - 20px);
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
 
 .card__img img {
-    width: 360px;
-    height: 275px;
+  width: 360px;
+  height: 275px;
 }
 
 .card__name {
-    position: absolute;
-    bottom: 5px;
-    padding-left: 15px;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 18px;
-    font-family: Roboto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  width: 360px;
+  height: 30px;
+  bottom: -18px;
+  padding-left: 15px;
+  background: rgba(255, 255, 255, 0.75);
+  font-weight: 700;
+  font-size: 18px;
+  font-family: 'Roboto';
+  line-height: 20px;
+  list-style-type: none;
 }
 
+.card:hover .card__name {
+  cursor: pointer;
+  width: 360px;
+  height: 145px;
+}
+.card__name :first-child {
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+.card__name :nth-child(n + 2) {
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+@media (max-width: 1365px) {
+  .card {
+    width: 300px !important;
+    height: 230px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .card {
+    width: 340px !important;
+    height: 249px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    width: 280px !important;
+    height: 205px;
+  }
+}
 

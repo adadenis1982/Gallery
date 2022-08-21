@@ -6,7 +6,7 @@ import "./Header.css";
 function Header({ onClick, isDarkTheme }) {
 
   return (
-    <div className="container">
+    <div className="header">
       <img src={logo} alt="logo" onClick={() => window.location.href = '/Gallery'}/>
       <img onClick={onClick} src={isDarkTheme ? switch_theme_dark : switch_theme} alt="switch_theme" />
     </div>
