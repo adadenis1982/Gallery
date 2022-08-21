@@ -4,7 +4,6 @@ import './Card.css';
 
 function Card({ card, location, author }) {
 
-  console.log(location, author)
   return (
     <div className="card">
       <div className="card__img">
