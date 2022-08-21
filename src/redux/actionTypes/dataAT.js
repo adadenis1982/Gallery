@@ -1,0 +1,5 @@
+export const GET_PAINTINGS = 'GET_PAINTINGS';
+export const START_LOADING = 'START_LOADING';
+export const END_LOADING = 'END_LOADING';
+export const GET_LOCATIONS = 'GET_LOCATIONS';
+export const GET_AUTHORS = 'GET_AUTHORS';
